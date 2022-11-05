@@ -1,0 +1,22 @@
+version: '3'
+
+services:
+
+  dev-node:
+    hostname: dex-node
+    build:
+      context: ./
+      dockerfile: node-server/Dockerfile
+    volumes:
+      - ./build:/opt/build
+    ports:
+      - 9527:9527
+    extra_hosts:
+      - host.docker.internal:host-gateway
+    networks:
+      - dex-quantitative
+
+networks:
+  dex-quantitative:
+    driver:
+      bridge
