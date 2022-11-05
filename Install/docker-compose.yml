@@ -14,9 +14,9 @@ services:
     extra_hosts:
       - host.docker.internal:host-gateway
     networks:
-      - dex-quantitative
+      - test-docker
 
 networks:
-  dex-quantitative:
+  test-docker:
     driver:
       bridge
